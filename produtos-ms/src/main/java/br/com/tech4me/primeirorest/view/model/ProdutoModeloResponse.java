@@ -40,6 +40,11 @@ public class ProdutoModeloResponse {
     public void setQtdEstoque(Integer qtdEstoque) {
         this.qtdEstoque = qtdEstoque;
     }
+
+   
+
+    
+ 
     
     //#endregion
 

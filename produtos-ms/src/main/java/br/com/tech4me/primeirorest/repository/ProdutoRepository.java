@@ -1,18 +1,21 @@
 package br.com.tech4me.primeirorest.repository;
 
-import java.util.List;
-import java.util.Optional;
+//import java.util.List;
+//import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import br.com.tech4me.primeirorest.compartilhado.ProdutoDto;
 import br.com.tech4me.primeirorest.model.Produto;
 
 @Repository
 public interface ProdutoRepository extends MongoRepository<Produto, String> {
 
-    List<Produto> findByOrderByNomeAsc();
+    ProdutoDto save(ProdutoDto produto);
 
-    Optional<Produto> findById(int idProduto);
+    //List<Produto> findByOrderByNomeAsc();
+
+    //Optional<Produto> findById(int idProduto);
 
 }

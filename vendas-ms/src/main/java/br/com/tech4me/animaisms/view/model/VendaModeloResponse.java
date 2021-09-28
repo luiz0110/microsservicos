@@ -5,16 +5,16 @@ import java.time.LocalDate;
 import br.com.tech4me.animaisms.compartilhado.Produto;
 
 public class VendaModeloResponse {
-  private Integer id;
+  private int id;
   private LocalDate data;
   private Produto produto;
-  private Integer quantidade;
+  private int quantidade;
 
   //#region Get/Set
-public Integer getId() {
+public int getId() {
     return id;
 }
-public void setId(Integer id) {
+public void setId(int id) {
     this.id = id;
 }
 public LocalDate getData() {
@@ -29,10 +29,10 @@ public Produto getProduto() {
 public void setProduto(Produto produto) {
     this.produto = produto;
 }
-public Integer getQuantidade() {
+public int getQuantidade() {
     return quantidade;
 }
-public void setQuantidade(Integer quantidade) {
+public void setQuantidade(int quantidade) {
     this.quantidade = quantidade;
 }
 //#region

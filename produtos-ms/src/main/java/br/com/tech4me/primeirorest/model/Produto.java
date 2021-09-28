@@ -7,29 +7,29 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Produto {
     @Id
     private String id;
-    private String nome;
     private Integer codigo;
+    private String nome;
     private double valorUnit;
     private Integer qtdEstoque;
 
-    //#region Getter/ Setter
+    //#region Get/Set
     public String getId() {
         return id;
     }
     public void setId(String id) {
         this.id = id;
     }
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
     public Integer getCodigo() {
         return codigo;
     }
     public void setCodigo(Integer codigo) {
         this.codigo = codigo;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     public double getValorUnit() {
         return valorUnit;
@@ -43,5 +43,7 @@ public class Produto {
     public void setQtdEstoque(Integer qtdEstoque) {
         this.qtdEstoque = qtdEstoque;
     }
+
+    
   //#endregion
 }

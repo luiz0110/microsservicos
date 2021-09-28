@@ -69,7 +69,7 @@ public class VendaController {
         return new ResponseEntity<>(resp, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{dataInicio}/{dataFim}")
+    @GetMapping(value = "/{dataInicio}/{dataFim}/lista")
     public ResponseEntity<List<VendaModeloResponse>> getPorData(
         @PathVariable @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate dataInicio,
         @PathVariable @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate dataFim) {

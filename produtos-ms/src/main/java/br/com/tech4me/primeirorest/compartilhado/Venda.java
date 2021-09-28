@@ -22,7 +22,7 @@ public class Venda {
         this.produto = produto;
     }
  
-    public Venda(LocalDate data, Produto produto, int quantidade) {
+    public Venda(LocalDate data, Produto produto, Integer quantidade) {
         this.data = data;
         this.produto = produto;
         this.quantidade = quantidade;

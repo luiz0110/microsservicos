@@ -1,12 +1,16 @@
 package br.com.tech4me.primeirorest.compartilhado;
 
-import java.util.List;
+
+//import java.util.List;
 
 public class ProdutoDto {
+    
     private String id;
-    private String nome;
     private Integer codigo;
-    private List<Venda> vendas;
+    private String nome;
+    private double valorUnit;
+    private Integer qtdEstoque;
+    //private List<Venda> vendas;
 
     //#region Get/Set
     public String getId() {
@@ -15,23 +19,31 @@ public class ProdutoDto {
     public void setId(String id) {
         this.id = id;
     }
-    public String getNome() {
-        return nome;
-    }
-    public List<Venda> getVendas() {
-        return vendas;
-    }
-    public void setVendas(List<Venda> vendas) {
-        this.vendas = vendas;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public int getCodigo() {
+    public Integer getCodigo() {
         return codigo;
     }
     public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public double getValorUnit() {
+        return valorUnit;
+    }
+    public void setValorUnit(double valorUnit) {
+        this.valorUnit = valorUnit;
+    }
+    public Integer getQtdEstoque() {
+        return qtdEstoque;
+    }
+    public void setQtdEstoque(Integer qtdEstoque) {
+        this.qtdEstoque = qtdEstoque;
+    }
+
+    
    //#endregion
 }

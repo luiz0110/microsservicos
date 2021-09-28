@@ -14,7 +14,7 @@ public class VendaModeloRequest {
 
     @NotNull(message = "A Quantidade em estoque de ser Informada")
     @Min(value = 1, message = "A quantidade NÂO pode ser menor que Um")
-    private Integer quantidade;
+    private int quantidade;
 
     //#region Get/Set
     public LocalDate getData() {
@@ -33,11 +33,11 @@ public class VendaModeloRequest {
         this.produto = produto;
     }
 
-    public Integer getQuantidade() {
+    public int getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(Integer quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
     //#endregion    

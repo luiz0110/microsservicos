@@ -6,8 +6,8 @@ import br.com.tech4me.animaisms.model.Venda;
 
 public class ProdutoDto {
     private String id;
-    private String nome;
     private int codigo;
+    private String nome;
     private List<Venda> vendas;
 
 
