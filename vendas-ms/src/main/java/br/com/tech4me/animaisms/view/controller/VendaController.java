@@ -24,8 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.tech4me.animaisms.compartilhado.Produto;
 import br.com.tech4me.animaisms.compartilhado.VendaDto;
 import br.com.tech4me.animaisms.service.VendaService;
-import br.com.tech4me.animaisms.view.model.VendaModeloRequest;
 import br.com.tech4me.animaisms.view.model.VendaModeloResponse;
+
+
 
 @RestController
 @RequestMapping("/api/vendas")

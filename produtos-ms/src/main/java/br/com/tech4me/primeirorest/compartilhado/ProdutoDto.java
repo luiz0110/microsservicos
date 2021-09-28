@@ -1,8 +1,6 @@
 package br.com.tech4me.primeirorest.compartilhado;
 
 
-//import java.util.List;
-
 public class ProdutoDto {
     
     private String id;
