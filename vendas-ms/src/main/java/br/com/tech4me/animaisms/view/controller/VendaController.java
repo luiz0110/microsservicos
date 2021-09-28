@@ -39,7 +39,7 @@ public class VendaController {
     }    
 
     @PostMapping
-    public ResponseEntity<VendaModeloResponse> criarVenda(@RequestBody @Valid VendaModeloRequest venda) {
+    public ResponseEntity<VendaDto> criarVenda(@RequestBody @Valid VendaDto venda) {
         ModelMapper mapper = new ModelMapper();
         VendaDto vendaDto = mapper.map(venda, VendaDto.class);
         Produto produto = new Produto();
@@ -50,7 +50,7 @@ public class VendaController {
         vendaDto = service.criarVenda(vendaDto);
         System.out.println(vendaDto.getProduto());
 
-        return new ResponseEntity<>(mapper.map(vendaDto, VendaModeloResponse.class), HttpStatus.CREATED);
+        return new ResponseEntity<>(mapper.map(vendaDto, VendaDto.class), HttpStatus.CREATED);
     }
     
     @GetMapping

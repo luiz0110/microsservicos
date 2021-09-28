@@ -51,11 +51,11 @@ public class ProdutoController {
     private ProdutoServiceImpl servico;
 
     @PostMapping
-    public ResponseEntity<ProdutoModeloResponse> criarProduto(@RequestBody @Valid ProdutoModeloRequest produto){
+    public ResponseEntity<ProdutoDto> criarProduto(@RequestBody @Valid ProdutoDto produto){
         ModelMapper mapper = new ModelMapper();
         ProdutoDto dto = mapper.map(produto, ProdutoDto.class);
         dto = servico.criarProduto(dto);
-        return new ResponseEntity<>(mapper.map(dto,ProdutoModeloResponse.class), HttpStatus.CREATED);
+        return new ResponseEntity<>(mapper.map(dto,ProdutoDto.class), HttpStatus.CREATED);
     }
 
     @GetMapping
@@ -85,7 +85,7 @@ public class ProdutoController {
     public String statusServico(@Value("${local.server.port}") String porta) {
         return String.format("Serviço ativo e executando na porta %s", porta);
     }
-    
+
     @DeleteMapping(value="/{id}")
     public ResponseEntity<Void> removerProduto(@PathVariable String id) {
         servico.removerProduto(id);
