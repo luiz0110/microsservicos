@@ -1,5 +1,6 @@
 package br.com.tech4me.primeirorest.compartilhado;
 
+import java.util.List;
 
 public class ProdutoDto {
     
@@ -8,9 +9,16 @@ public class ProdutoDto {
     private String nome;
     private double valorUnit;
     private Integer qtdEstoque;
-    //private List<Venda> vendas;
+    private List<Venda> vendas;
 
     //#region Get/Set
+    public List<Venda> getVendas() {
+        return vendas;
+    }
+    public void setVendas(List<Venda> vendas) {
+        this.vendas = vendas;
+    }
+   
     public String getId() {
         return id;
     }

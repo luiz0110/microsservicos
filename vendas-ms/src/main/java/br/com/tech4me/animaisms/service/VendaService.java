@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 
 import br.com.tech4me.animaisms.clienteHTTP.VendasFeignClient;
 import br.com.tech4me.animaisms.compartilhado.VendaDto;
+import br.com.tech4me.animaisms.model.AcertoDeEstoque;
 import br.com.tech4me.animaisms.model.Venda;
-import br.com.tech4me.animaisms.model.dtos.AcertoDeEstoque;
 import br.com.tech4me.animaisms.repository.VendaRepository;
 
 @Service

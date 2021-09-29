@@ -1,4 +1,4 @@
-package br.com.tech4me.animaisms.model.dtos;
+package br.com.tech4me.animaisms.model;
 
 public class AcertoDeEstoque {
     private int quantidadeVendida;

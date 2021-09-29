@@ -7,8 +7,8 @@ public class VendaDto {
     private LocalDate data;
     private Produto produto;
     private int quantidade;
-
-    //#region
+    
+    //#region Get/Set
     public int getId() {
         return id;
     }

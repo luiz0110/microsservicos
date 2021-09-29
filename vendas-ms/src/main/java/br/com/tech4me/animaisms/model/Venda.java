@@ -16,6 +16,18 @@ public class Venda {
    private Produto produto;
    private int quantidade;
 
+   public Venda() {}
+
+   public Venda(Produto produto) {
+       this.produto = produto;
+   }
+
+   public Venda(LocalDate data, Produto produto, Integer quantidade) {
+       this.data = data;
+       this.produto = produto;
+       this.quantidade = quantidade;
+   }
+   
      //#region Get/Set
     public int getId() {
         return id;

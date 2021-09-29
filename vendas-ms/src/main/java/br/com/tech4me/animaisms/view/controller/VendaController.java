@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.tech4me.animaisms.compartilhado.Produto;
 import br.com.tech4me.animaisms.compartilhado.VendaDto;
 import br.com.tech4me.animaisms.service.VendaService;
+import br.com.tech4me.animaisms.view.model.VendaModeloRequest;
 import br.com.tech4me.animaisms.view.model.VendaModeloResponse;
 
 
@@ -40,7 +41,7 @@ public class VendaController {
     }    
 
     @PostMapping
-    public ResponseEntity<VendaDto> criarVenda(@RequestBody @Valid VendaDto venda) {
+    public ResponseEntity<VendaModeloResponse> criarVenda(@RequestBody @Valid VendaModeloRequest venda) {
         ModelMapper mapper = new ModelMapper();
         VendaDto vendaDto = mapper.map(venda, VendaDto.class);
         Produto produto = new Produto();
@@ -51,14 +52,14 @@ public class VendaController {
         vendaDto = service.criarVenda(vendaDto);
         System.out.println(vendaDto.getProduto());
 
-        return new ResponseEntity<>(mapper.map(vendaDto, VendaDto.class), HttpStatus.CREATED);
+        return new ResponseEntity<>(mapper.map(vendaDto, VendaModeloResponse.class), HttpStatus.CREATED);
     }
     
     @GetMapping
     public ResponseEntity<List<VendaModeloResponse>> obterTodos() {
         List<VendaDto> vendas = service.obterTodasAsVendas();
 
-        if(vendas.isEmpty()){
+        if(vendas.isEmpty()){            
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -70,10 +71,10 @@ public class VendaController {
         return new ResponseEntity<>(resp, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{dataInicio}/{dataFim}/lista")
+    @GetMapping(value = "/{dataInicio}/{dataFim}")
     public ResponseEntity<List<VendaModeloResponse>> getPorData(
-        @PathVariable @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate dataInicio,
-        @PathVariable @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate dataFim) {
+        @PathVariable @DateTimeFormat(pattern = "yyyy-mm-dd") LocalDate dataInicio,
+        @PathVariable @DateTimeFormat(pattern = "yyyy-mm-dd") LocalDate dataFim) {
       List<VendaDto> vendas = service.obterPorPeriodo(dataInicio, dataFim);
       TypeToken<List<VendaModeloResponse>> token = new TypeToken<>() {
       };

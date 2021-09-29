@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.tech4me.primeirorest.compartilhado.ProdutoDto;
 
 import br.com.tech4me.primeirorest.service.ProdutoServiceImpl;
+import br.com.tech4me.primeirorest.view.model.ProdutoModeloRequest;
 import br.com.tech4me.primeirorest.view.model.ProdutoModeloResponse;
 
 
@@ -34,11 +35,11 @@ public class ProdutoController {
     private ProdutoServiceImpl servico;
 
     @PostMapping
-    public ResponseEntity<ProdutoDto> criarProduto(@RequestBody @Valid ProdutoDto produto){
+    public ResponseEntity<ProdutoModeloResponse> criarProduto(@RequestBody @Valid ProdutoModeloRequest produto){
         ModelMapper mapper = new ModelMapper();
         ProdutoDto dto = mapper.map(produto, ProdutoDto.class);
         dto = servico.criarProduto(dto);
-        return new ResponseEntity<>(mapper.map(dto,ProdutoDto.class), HttpStatus.CREATED);
+        return new ResponseEntity<>(mapper.map(dto,ProdutoModeloResponse.class), HttpStatus.CREATED);
     }
 
     @GetMapping
